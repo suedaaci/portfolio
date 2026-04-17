@@ -27,37 +27,7 @@ function createStars() {
     }
 }
 
-function setupContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
 
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const feedback = document.getElementById('formFeedback');
-
-            if (name === "" || email === "" || message === "") {
-                feedback.innerText = "Lütfen tüm alanları doldurunuz!";
-                feedback.style.color = "#ff7675";
-            } else if (!email.includes("@")) {
-                feedback.innerText = "Lütfen geçerli bir e-posta adresi giriniz!";
-                feedback.style.color = "#ff7675";
-            } else {
-                feedback.innerText = "Mesajınız başarıyla alındı. Teşekkürler, " + name + "!";
-                feedback.style.color = "#55efc4";
-                contactForm.reset();
-            }
-        });
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    createStars();
-    setupContactForm();
-});
 
 function openTab(evt, tabName) {
     const tabContents = document.getElementsByClassName("tab-content");
